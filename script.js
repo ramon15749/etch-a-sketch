@@ -1,25 +1,31 @@
-function color(){
-  this.classList.add('colored');
-  console.log("in");
+function build(num){
+  bigContainer.style.cssText = 'grid-template-columns: repeat(' +n +',1fr)';
+
+  for(i = 0; i < num*num; i++){
+    const inside = document.createElement('div');
+    inside.classList.add('inside');
+    inside.style.cssText = 'width:' + size;
+    inside.style.cssText = 'height:' + size;
+    bigContainer.appendChild(inside);
+  }
+  insides = document.querySelectorAll('.inside');
 }
 
-n = prompt("Enter the dimension");
-size = 960/n;
+function remove(){
+  while (bigContainer.firstChild) {
+    bigContainer.removeChild(bigContainer.firstChild);
+  }
 
-const bigContainer = document.querySelector(".container")
-bigContainer.style.cssText = 'grid-template-columns: repeat(' +n +',1fr)';
+  n = prompt("Enter the dimension");
+  size = 600/n;
 
-for(i = 0; i < n*n; i++){
-  const inside = document.createElement('div');
-  inside.classList.add('inside');
-  inside.style.cssText = 'width:' + size;
-  inside.style.cssText = 'height:' + size;
-  bigContainer.appendChild(inside);
+  build(n);
+
+  insides.forEach((inside) => {
+    inside.addEventListener('mouseover', color)
+  });
+
 }
-
-
-
-const insides = document.querySelectorAll('.inside');
 
 function reset(){
   insides.forEach((inside) => {
@@ -27,10 +33,26 @@ function reset(){
   });
 }
 
+function color(){
+  this.classList.add('colored');
+}
+
+n = prompt("Enter the dimension");
+size = 600/n;
+
+const bigContainer = document.querySelector(".container")
+
+build(n);
+
 insides.forEach((inside) => {
   inside.addEventListener('mouseover', color)
 });
 
-const button = document.querySelector('button');
 
+
+const canvas = document.querySelector('.remove')
+canvas.addEventListener('click', remove);
+//
+const button = document.querySelector('.reset');
 button.addEventListener('click', reset);
+//
