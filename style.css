@@ -1,11 +1,9 @@
 .container {
   display: grid;
-  grid-template-columns: 100px 100px 100px 100px;
+  width: 960px;
 }
 
 .inside{
-  height: 100px;
-  width: 100px;
   grid-gap: 0px;
   border: 1px solid black;
 }
