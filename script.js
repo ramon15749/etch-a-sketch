@@ -37,7 +37,7 @@ function color(){
   this.classList.add('colored');
 }
 
-n = prompt("Enter the dimension");
+n = 20;
 size = 600/n;
 
 const bigContainer = document.querySelector(".container")
@@ -47,8 +47,6 @@ build(n);
 insides.forEach((inside) => {
   inside.addEventListener('mouseover', color)
 });
-
-
 
 const canvas = document.querySelector('.remove')
 canvas.addEventListener('click', remove);

@@ -1,13 +1,54 @@
+*{
+font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background-color: #EFEFEF;
+}
+
+h1{
+  font-size: 56px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #a9a9a9;
+}
+
+button{
+  border-radius: 0px;
+  border: 0px solid white;
+  padding: 3px 3px 3px 3px;
+  margin-bottom: 7px;
+  width: 80px;
+}
+
 .container {
   display: grid;
   width: 600px;
+  padding: 20px 20px 20px 20px;
+  background: #d5d5d5;
+}
+
+
+button, input{
+  display: block;
+}
+
+.layout{
+  display: grid;
+  grid-template-columns: 100px auto;
+  background-color: #CAEBF2;
+  padding: 20px 5px 20px 10px;
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .inside{
   grid-gap: 0px;
-  border: 1px solid black;
+  border: 0.5px solid #d0d0d0;
 }
 
 .colored{
-  background-color: red;
+  background-color: black;
 }
